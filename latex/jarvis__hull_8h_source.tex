@@ -1,0 +1,64 @@
+\doxysection{jarvis\+\_\+hull.\+h}
+\hypertarget{jarvis__hull_8h_source}{}\label{jarvis__hull_8h_source}\index{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_hull.h@{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_hull.h}}
+\mbox{\hyperlink{jarvis__hull_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \#include\ <algorithm>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \#include\ <sstream>}}
+\DoxyCodeLine{00013\ \ }
+\DoxyCodeLine{00018\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_hull_point}{HullPoint}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_hull_point_a3bb7c8b48e0a03cef893da1f836b3d32}{x}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_hull_point_a91868792c4bc2a1ba55e3b876b5853af}{y}};\ }
+\DoxyCodeLine{00021\ \ \};}
+\DoxyCodeLine{00022\ \ }
+\DoxyCodeLine{00030\ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{jarvis__hull_8h_a168e6c977c57fdb89493cdafb9bcffa4}{checkOrientation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_hull_point}{HullPoint}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_hull_point}{HullPoint}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_hull_point}{HullPoint}}\&\ c)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \textcolor{keywordtype}{int}\ cross\_product\ =\ (b.\mbox{\hyperlink{struct_hull_point_a91868792c4bc2a1ba55e3b876b5853af}{y}}\ -\/\ a.\mbox{\hyperlink{struct_hull_point_a91868792c4bc2a1ba55e3b876b5853af}{y}})\ *\ (c.\mbox{\hyperlink{struct_hull_point_a3bb7c8b48e0a03cef893da1f836b3d32}{x}}\ -\/\ b.\mbox{\hyperlink{struct_hull_point_a3bb7c8b48e0a03cef893da1f836b3d32}{x}})\ -\/\ (b.\mbox{\hyperlink{struct_hull_point_a3bb7c8b48e0a03cef893da1f836b3d32}{x}}\ -\/\ a.\mbox{\hyperlink{struct_hull_point_a3bb7c8b48e0a03cef893da1f836b3d32}{x}})\ *\ (c.\mbox{\hyperlink{struct_hull_point_a91868792c4bc2a1ba55e3b876b5853af}{y}}\ -\/\ b.\mbox{\hyperlink{struct_hull_point_a91868792c4bc2a1ba55e3b876b5853af}{y}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \textcolor{keywordflow}{return}\ (cross\_product\ ==\ 0)\ ?\ 0\ :\ ((cross\_product\ >\ 0)\ ?\ 1\ :\ 2);}
+\DoxyCodeLine{00033\ \ \}}
+\DoxyCodeLine{00034\ \ }
+\DoxyCodeLine{00040\ \ \textcolor{keyword}{inline}\ std::vector<HullPoint>\ \mbox{\hyperlink{jarvis__hull_8h_a83614a34eea6b0469e699f26660aa9ab}{computeJarvisHull}}(\textcolor{keyword}{const}\ std::vector<HullPoint>\&\ point\_set)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ point\_set.size();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <\ 3)\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00043\ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \textcolor{comment}{//\ Find\ leftmost\ point}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ leftmost\_pos\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (point\_set[i].x\ <\ point\_set[leftmost\_pos].x\ ||\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ (point\_set[i].x\ ==\ point\_set[leftmost\_pos].x\ \&\&\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ point\_set[i].y\ <\ point\_set[leftmost\_pos].y))\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ leftmost\_pos\ =\ i;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ std::vector<HullPoint>\ hull\_points;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ current\_pos\ =\ leftmost\_pos,\ next\_pos;}
+\DoxyCodeLine{00056\ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ hull\_points.push\_back(point\_set[current\_pos]);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ next\_pos\ =\ (current\_pos\ +\ 1)\ \%\ n;}
+\DoxyCodeLine{00060\ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{jarvis__hull_8h_a168e6c977c57fdb89493cdafb9bcffa4}{checkOrientation}}(point\_set[current\_pos],\ point\_set[i],\ point\_set[next\_pos])\ ==\ 2)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_pos\ =\ i;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ current\_pos\ =\ next\_pos;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (current\_pos\ !=\ leftmost\_pos);}
+\DoxyCodeLine{00069\ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \textcolor{keywordflow}{return}\ hull\_points;}
+\DoxyCodeLine{00071\ \ \}}
+\DoxyCodeLine{00072\ \ }
+\DoxyCodeLine{00078\ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{jarvis__hull_8h_a4f67bcc14b0a6730a5fdc950eb6d4529}{formatHull}}(\textcolor{keyword}{const}\ std::vector<HullPoint>\&\ points)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ std::ostringstream\ stream;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pt\ :\ points)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ stream\ <<\ pt.x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ pt.y\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \textcolor{keywordflow}{return}\ stream.str();}
+\DoxyCodeLine{00084\ \ \}}
+
+\end{DoxyCode}

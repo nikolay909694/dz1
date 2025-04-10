@@ -1,0 +1,86 @@
+\doxysection{Network\+Client Class Reference}
+\hypertarget{class_network_client}{}\label{class_network_client}\index{NetworkClient@{NetworkClient}}
+
+
+Handles network communication with the server.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_client_ac3e6334ffae912c14087fb58072c03d1}{Network\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Constructor initializes Winsock and creates socket. \end{DoxyCompactList}\item 
+\Hypertarget{class_network_client_ab82fb597494c89b4a7ba9fd0d4b659c4}\label{class_network_client_ab82fb597494c89b4a7ba9fd0d4b659c4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Network\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor cleans up socket and Winsock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_client_ace492764c0d2ebed1f2bd7ae3a45916d}{connect\+To\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Connects to the server. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_network_client_adc29ee3fa61f161da076b28752eefe43}{send\+Request}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Sends request and receives response from server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles network communication with the server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_network_client_ac3e6334ffae912c14087fb58072c03d1}\index{NetworkClient@{NetworkClient}!NetworkClient@{NetworkClient}}
+\index{NetworkClient@{NetworkClient}!NetworkClient@{NetworkClient}}
+\doxysubsubsection{\texorpdfstring{NetworkClient()}{NetworkClient()}}
+{\footnotesize\ttfamily \label{class_network_client_ac3e6334ffae912c14087fb58072c03d1} 
+Network\+Client\+::\+Network\+Client (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor initializes Winsock and creates socket. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if initialization fails \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_client_ace492764c0d2ebed1f2bd7ae3a45916d}\index{NetworkClient@{NetworkClient}!connectToServer@{connectToServer}}
+\index{connectToServer@{connectToServer}!NetworkClient@{NetworkClient}}
+\doxysubsubsection{\texorpdfstring{connectToServer()}{connectToServer()}}
+{\footnotesize\ttfamily \label{class_network_client_ace492764c0d2ebed1f2bd7ae3a45916d} 
+void Network\+Client\+::connect\+To\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connects to the server. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if connection fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_network_client_adc29ee3fa61f161da076b28752eefe43}\index{NetworkClient@{NetworkClient}!sendRequest@{sendRequest}}
+\index{sendRequest@{sendRequest}!NetworkClient@{NetworkClient}}
+\doxysubsubsection{\texorpdfstring{sendRequest()}{sendRequest()}}
+{\footnotesize\ttfamily \label{class_network_client_adc29ee3fa61f161da076b28752eefe43} 
+std\+::string Network\+Client\+::send\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends request and receives response from server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data string to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Server response as string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if communication fails \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/Универ/4\+\_\+семестр/ДЗ\+\_\+1\+\_\+Коля/\+For doc/\mbox{\hyperlink{jarvis__client_8cpp}{jarvis\+\_\+client.\+cpp}}\end{DoxyCompactItemize}

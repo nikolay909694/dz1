@@ -1,0 +1,60 @@
+\doxysection{D\+:/Универ/4\+\_\+семестр/ДЗ\+\_\+1\+\_\+Коля/\+For doc/jarvis\+\_\+mass\+\_\+test.cpp File Reference}
+\hypertarget{jarvis__mass__test_8cpp}{}\label{jarvis__mass__test_8cpp}\index{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_mass\_test.cpp@{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_mass\_test.cpp}}
+
+
+Массовое тестирование сервера выпуклой оболочки (Jarvis March)  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}jarvis\+\_\+hull.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a614217d263be1fb1a5f76e2ff7be19a2}\label{jarvis__mass__test_8cpp_a614217d263be1fb1a5f76e2ff7be19a2} 
+\#define {\bfseries PORT}~9090
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a6b20d41d6252e9871430c242cb1a56e7}\label{jarvis__mass__test_8cpp_a6b20d41d6252e9871430c242cb1a56e7} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~4096
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a255a33e35115a516730b5425b551d850}\label{jarvis__mass__test_8cpp_a255a33e35115a516730b5425b551d850} 
+\#define {\bfseries NUM\+\_\+\+CLIENTS}~100
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a9aaf2f71f34063f7082107665041e365}\label{jarvis__mass__test_8cpp_a9aaf2f71f34063f7082107665041e365} 
+\#define {\bfseries POINTS\+\_\+\+PER\+\_\+\+TEST}~50
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a23f67ede912654c6b2a4a613e84b80be}\label{jarvis__mass__test_8cpp_a23f67ede912654c6b2a4a613e84b80be} 
+\#define {\bfseries TEST\+\_\+\+LOG\+\_\+\+FILE}~"{}jarvis\+\_\+tests.\+log"{}
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a6c95813cb1a88861d5629a89b16daff5}\label{jarvis__mass__test_8cpp_a6c95813cb1a88861d5629a89b16daff5} 
+\#define {\bfseries MIN\+\_\+\+COORD}~-\/1000
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a04fee0c711dd7fbb8253ff0120cdf28d}\label{jarvis__mass__test_8cpp_a04fee0c711dd7fbb8253ff0120cdf28d} 
+\#define {\bfseries MAX\+\_\+\+COORD}~1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_ab6f847c9f1fae53e853e62deffa562f0}\label{jarvis__mass__test_8cpp_ab6f847c9f1fae53e853e62deffa562f0} 
+std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ {\bfseries generate\+Unique\+Points} (int count, std\+::mt19937 \&gen, std\+::uniform\+\_\+int\+\_\+distribution$<$$>$ \&dist)
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_abdae3cd6beed64bc84b2a1cf6932157c}\label{jarvis__mass__test_8cpp_abdae3cd6beed64bc84b2a1cf6932157c} 
+void {\bfseries save\+Test\+To\+File} (const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&points, const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&hull)
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_a9856ccefa7fddf73ee0d76a7776dcf27}\label{jarvis__mass__test_8cpp_a9856ccefa7fddf73ee0d76a7776dcf27} 
+bool {\bfseries test\+Client} (const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&test\+Points, int client\+Id)
+\item 
+\Hypertarget{jarvis__mass__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{jarvis__mass__test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Массовое тестирование сервера выпуклой оболочки (Jarvis March) 
+

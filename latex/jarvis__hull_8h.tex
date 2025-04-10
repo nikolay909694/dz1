@@ -1,0 +1,96 @@
+\doxysection{D\+:/Универ/4\+\_\+семестр/ДЗ\+\_\+1\+\_\+Коля/\+For doc/jarvis\+\_\+hull.h File Reference}
+\hypertarget{jarvis__hull_8h}{}\label{jarvis__hull_8h}\index{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_hull.h@{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_hull.h}}
+
+
+Convex Hull calculation using Jarvis March algorithm.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hull_point}{Hull\+Point}}
+\begin{DoxyCompactList}\small\item\em Represents a 2D point with integer coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{jarvis__hull_8h_a168e6c977c57fdb89493cdafb9bcffa4}{check\+Orientation}} (const \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} \&a, const \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} \&b, const \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} \&c)
+\begin{DoxyCompactList}\small\item\em Determines orientation of three points. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \mbox{\hyperlink{jarvis__hull_8h_a83614a34eea6b0469e699f26660aa9ab}{compute\+Jarvis\+Hull}} (const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&point\+\_\+set)
+\begin{DoxyCompactList}\small\item\em Computes convex hull using Jarvis March algorithm. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{jarvis__hull_8h_a4f67bcc14b0a6730a5fdc950eb6d4529}{format\+Hull}} (const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Formats hull points to string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Convex Hull calculation using Jarvis March algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Your Name 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Creation Date 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{jarvis__hull_8h_a168e6c977c57fdb89493cdafb9bcffa4}\index{jarvis\_hull.h@{jarvis\_hull.h}!checkOrientation@{checkOrientation}}
+\index{checkOrientation@{checkOrientation}!jarvis\_hull.h@{jarvis\_hull.h}}
+\doxysubsubsection{\texorpdfstring{checkOrientation()}{checkOrientation()}}
+{\footnotesize\ttfamily \label{jarvis__hull_8h_a168e6c977c57fdb89493cdafb9bcffa4} 
+int check\+Orientation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} \&}]{a}{, }\item[{const \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} \&}]{b}{, }\item[{const \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines orientation of three points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First reference point \\
+\hline
+{\em b} & Second reference point \\
+\hline
+{\em c} & Third point to check orientation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if collinear, 1 if clockwise, 2 if counter-\/clockwise 
+\end{DoxyReturn}
+\Hypertarget{jarvis__hull_8h_a83614a34eea6b0469e699f26660aa9ab}\index{jarvis\_hull.h@{jarvis\_hull.h}!computeJarvisHull@{computeJarvisHull}}
+\index{computeJarvisHull@{computeJarvisHull}!jarvis\_hull.h@{jarvis\_hull.h}}
+\doxysubsubsection{\texorpdfstring{computeJarvisHull()}{computeJarvisHull()}}
+{\footnotesize\ttfamily \label{jarvis__hull_8h_a83614a34eea6b0469e699f26660aa9ab} 
+std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ compute\+Jarvis\+Hull (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&}]{point\+\_\+set}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes convex hull using Jarvis March algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+\_\+set} & Input set of points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of points forming the convex hull in order 
+\end{DoxyReturn}
+\Hypertarget{jarvis__hull_8h_a4f67bcc14b0a6730a5fdc950eb6d4529}\index{jarvis\_hull.h@{jarvis\_hull.h}!formatHull@{formatHull}}
+\index{formatHull@{formatHull}!jarvis\_hull.h@{jarvis\_hull.h}}
+\doxysubsubsection{\texorpdfstring{formatHull()}{formatHull()}}
+{\footnotesize\ttfamily \label{jarvis__hull_8h_a4f67bcc14b0a6730a5fdc950eb6d4529} 
+std\+::string format\+Hull (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \&}]{points}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Formats hull points to string representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Vector of Hull\+Points to format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String in format "{}x,y x,y ..."{} 
+\end{DoxyReturn}

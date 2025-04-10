@@ -1,0 +1,77 @@
+\doxysection{D\+:/Универ/4\+\_\+семестр/ДЗ\+\_\+1\+\_\+Коля/\+For doc/jarvis\+\_\+server.cpp File Reference}
+\hypertarget{jarvis__server_8cpp}{}\label{jarvis__server_8cpp}\index{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_server.cpp@{D:/Универ/4\_семестр/ДЗ\_1\_Коля/For doc/jarvis\_server.cpp}}
+
+
+Server for computing convex hull using Jarvis March algorithm.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \#include $<$ws2tcpip.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}jarvis\+\_\+hull.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{jarvis__server_8cpp_a72a46f4fe6a9bcd35fdac018144fb5dd}\label{jarvis__server_8cpp_a72a46f4fe6a9bcd35fdac018144fb5dd} 
+\#define {\bfseries JARVIS\+\_\+\+PORT}~9090
+\begin{DoxyCompactList}\small\item\em Server listening port. \end{DoxyCompactList}\item 
+\Hypertarget{jarvis__server_8cpp_a473776433ac44bc525b8cd5186969b4b}\label{jarvis__server_8cpp_a473776433ac44bc525b8cd5186969b4b} 
+\#define {\bfseries BUFFER\+\_\+\+CAPACITY}~2048
+\begin{DoxyCompactList}\small\item\em Receive buffer size. \end{DoxyCompactList}\item 
+\Hypertarget{jarvis__server_8cpp_a5e22ab502256881f89a9aa2e2c94fc84}\label{jarvis__server_8cpp_a5e22ab502256881f89a9aa2e2c94fc84} 
+\#define {\bfseries MAX\+\_\+\+PENDING\+\_\+\+CONNECTIONS}~50
+\begin{DoxyCompactList}\small\item\em Maximum pending connections queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ \mbox{\hyperlink{jarvis__server_8cpp_a11f5ac5af4196d19a22747b924557f29}{parse\+Coordinates}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Parses coordinate string into vector of Hull\+Points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{jarvis__server_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main server entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server for computing convex hull using Jarvis March algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Your Name 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Creation Date 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{jarvis__server_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{jarvis\_server.cpp@{jarvis\_server.cpp}!main@{main}}
+\index{main@{main}!jarvis\_server.cpp@{jarvis\_server.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{jarvis__server_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main server entry point. 
+
+\begin{DoxyReturn}{Returns}
+0 on normal exit, 1 on error 
+\end{DoxyReturn}
+\Hypertarget{jarvis__server_8cpp_a11f5ac5af4196d19a22747b924557f29}\index{jarvis\_server.cpp@{jarvis\_server.cpp}!parseCoordinates@{parseCoordinates}}
+\index{parseCoordinates@{parseCoordinates}!jarvis\_server.cpp@{jarvis\_server.cpp}}
+\doxysubsubsection{\texorpdfstring{parseCoordinates()}{parseCoordinates()}}
+{\footnotesize\ttfamily \label{jarvis__server_8cpp_a11f5ac5af4196d19a22747b924557f29} 
+std\+::vector$<$ \mbox{\hyperlink{struct_hull_point}{Hull\+Point}} $>$ parse\+Coordinates (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Parses coordinate string into vector of Hull\+Points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & String in format "{}x,y x,y ..."{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of parsed points 
+\end{DoxyReturn}
